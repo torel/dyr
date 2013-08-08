@@ -26,7 +26,13 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+            document.addEventListener('deviceready', this.onDeviceReady, false);
+        }
+        else {
+            this.onDeviceReady();
+        }
+        
     },
     // deviceready Event Handler
     //
@@ -45,5 +51,8 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        $(parentElement).parent().remove();
+        $('#animal-matrix').show();
     }
 };
