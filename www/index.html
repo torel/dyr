@@ -37,35 +37,35 @@
         <div id="animal-matrix" style="display: none;">
             <table>
                 <tr>
-                    <td>
+                    <td id="and">
                         <img src="img/and.jpg">          
                     </td>
-                    <td>
+                    <td id="geit">
                         <img src="img/geit.jpg">
                     </td>
-                    <td>
+                    <td  id="gris">
                         <img src="img/gris.jpg">
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="hest">
                         <img src="img/hest.jpg">
                     </td>
-                    <td>
+                    <td id="hund">
                         <img src="img/hund.jpg">
                     </td>
-                    <td>
+                    <td id="katt">
                         <img src="img/katt.jpg">
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="ku">
                         <img src="img/ku.jpg">
                     </td>
-                    <td>
+                    <td id="sau">
                         <img src="img/sau.jpg">
                     </td>
-                    <td>
+                    <td id="ugle">
                         <img src="img/ugle.jpg">
                     </td>
                 </tr>
@@ -74,10 +74,19 @@
 
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/lib/zepto.min.js"></script>
+        <script type="text/javascript" src="js/lib/soundjs.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/sound.js"></script>
 
         <script type="text/javascript">
             app.initialize();
+
+            $('#and').on('click', function(e) {
+                var sound = new Sound('and');
+                sound.play();   
+            });
+            
+            
         </script>
     </body>
 </html>
