@@ -23,9 +23,12 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
         <title>Dyrelyder</title>
     </head>
-    <body>
+    <body onload="Game.init()">
+        <canvas id ="loadCanvas"></canvas>
+        
         <div class="app">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
@@ -35,7 +38,7 @@
         </div>
 
         <div id="animal-matrix" style="display: none;">
-            <table>
+            <table class="animalSound">
                 <tr>
                     <td id="and">
                         <img src="img/and.jpg">          
@@ -74,17 +77,22 @@
 
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/lib/zepto.min.js"></script>
-        <script type="text/javascript" src="js/lib/soundjs.min.js"></script>
+        <script type="text/javascript" src="http://code.createjs.com/createjs-2013.05.14.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/sound.js"></script>
+        <script type="text/javascript" src="js/ContentManager.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
 
         <script type="text/javascript">
-            app.initialize();
+               
+
+          /*  app.initialize();
+
 
             $('#and').on('click', function(e) {
                 var sound = new Sound('and');
                 sound.play();   
-            });
+            });*/
             
             
         </script>

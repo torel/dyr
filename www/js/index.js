@@ -53,6 +53,6 @@ var app = {
         console.log('Received Event: ' + id);
 
         $(parentElement).parent().remove();
-        $('#animal-matrix').show();
+        /*$('#animal-matrix').show();*/
     }
 };

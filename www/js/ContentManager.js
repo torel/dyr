@@ -20,11 +20,14 @@
 	var width, height, that;
 
 
-	function ContentManager(stage){
-		this.initialize(stage);
+	function ContentManager(stage, manifest){
+		this.initialize(stage, manifest);
 	};
 
-	ContentManager.prototype.initialize = function(stage) {
+	ContentManager.prototype.initialize = function(stage, manifest) {
+		this.stage = stage;
+		this.manifest = manifest
+
 		width = stage.canvas.width;
 		height = stage.canvas.height;
 		
@@ -46,11 +49,13 @@
 	//Private functions
 	function handleElementLoad(event) {
 		numElementsLoaded++;
+
+		console.log(that)
 		that.assets[event.item.id] = event.result;
 		
 		// If all elements have been downloaded
-        if (numElementsLoaded === manifest.length) {
-            stage.removeChild(downloadProgress);
+        if (numElementsLoaded === that.manifest.length) {
+            that.stage.removeChild(downloadProgress);
             createjs.Ticker.removeAllListeners();
             numElementsLoaded = 0;
             // we're calling back the method set by SetDownloadCompleted
@@ -68,17 +73,18 @@
 	        ondownloadcompleted = callbackMethod;
 	};
 
-	ContentManager.prototype.startDownload = function(manifest) {			
-			preload.loadManifest(manifest);
-			stage.addChild(downloadProgress);
+	ContentManager.prototype.startDownload = function() {			
+			console.log("Manifestus:", this.manifest)
+			preload.loadManifest(this.manifest);
+			this.stage.addChild(downloadProgress);
 			
 			createjs.Ticker.addListener(this);
 	        createjs.Ticker.setInterval(50);
 	};
 
 	ContentManager.prototype.tick = function() {
-        downloadProgress.text = "Downloading " + Math.round((numElementsLoaded / manifest.length) * 100) + " %";
-        stage.update();
+        downloadProgress.text = "Downloading " + Math.round((numElementsLoaded / this.manifest.length) * 100) + " %";
+        this.stage.update();
     };
 
 	window.ContentManager = ContentManager;
