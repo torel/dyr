@@ -1,19 +1,19 @@
 /*
 
-	This content manager uses a createjs.Stage as input, has following methods:
+	This content manager uses a createjs.Stageand manifest as input, has following methods:
 	.setDownloadComplete() - takes a callback function to start after download is completed
 	.startDownload() - takes a manifest (Array) with ID and SRC as input, eksample:
-		var manifest = [
+	.assets - returns an array of objects containing reference to the assets loaded.
+	example manifest:
+	var manifest = [
 		{id:"image1",src: "assets/img/image1.png"}
 		]
-	.assets - returns an array of objects containing reference to the assets loaded.
-
 */
 
 (function(window) {
 
 	var ondownloadcompleted;
-	var downloadProgress;
+	var loadProgress;
 	var preload;
 	var numElementsLoaded = 0;
 	var soundCount = 0;
@@ -37,9 +37,9 @@
 		preload.onError =  handleElementError;
 		preload.onFileLoad = handleElementLoad;
 
-		downloadProgress = new createjs.Text("-- %", "bold 14px Arial", "#FFF");
-	    downloadProgress.x = (width / 2) - 50;
-	    downloadProgress.y = height / 2;
+		loadProgress = new createjs.Text("-- %", "bold 14px Arial", "#FFF");
+	    loadProgress.x = (width / 2) - 50;
+	    loadProgress.y = height / 2;
 	   	this.assets = []
 	    that = this;
 
@@ -49,15 +49,14 @@
 	//Private functions
 	function handleElementLoad(event) {
 		numElementsLoaded++;
+		that.assets[event.item.id] = preload.getResult(event.item.id);
 
-		console.log(that)
-		that.assets[event.item.id] = event.result;
-		
 		// If all elements have been downloaded
         if (numElementsLoaded === that.manifest.length) {
-            that.stage.removeChild(downloadProgress);
+            that.stage.removeChild(loadProgress);
             createjs.Ticker.removeAllListeners();
             numElementsLoaded = 0;
+
             // we're calling back the method set by SetDownloadCompleted
             ondownloadcompleted();
         }
@@ -74,16 +73,15 @@
 	};
 
 	ContentManager.prototype.startDownload = function() {			
-			console.log("Manifestus:", this.manifest)
 			preload.loadManifest(this.manifest);
-			this.stage.addChild(downloadProgress);
+			this.stage.addChild(loadProgress);
 			
 			createjs.Ticker.addListener(this);
 	        createjs.Ticker.setInterval(50);
 	};
 
 	ContentManager.prototype.tick = function() {
-        downloadProgress.text = "Downloading " + Math.round((numElementsLoaded / this.manifest.length) * 100) + " %";
+        loadProgress.text = "Loading " + Math.round((numElementsLoaded / this.manifest.length) * 100) + " %";
         this.stage.update();
     };
 

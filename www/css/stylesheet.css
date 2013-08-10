@@ -15,4 +15,15 @@
 img {
 	width: 300px;
 	height: 200px;
+	transition:width 1s, height 1s. display:1s;
+	-webkit-transition:width 1s, height 1s;
+}
+
+.clicked {
+	width: 1000px;
+	height: 640px;
+}
+
+.hidden {
+	display: none;
 }

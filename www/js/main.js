@@ -21,8 +21,8 @@ Game = {
 		var stage = new createjs.Stage(canv);
 
 		Game.contentManager = new ContentManager(stage, this.manifest);
-		Game.contentManager.setDownloadCompleted(this.startGame)
-		Game.contentManager.startDownload()
+		Game.contentManager.setDownloadCompleted(this.startGame);
+		Game.contentManager.startDownload();
 
         
             
@@ -30,20 +30,28 @@ Game = {
 	},
 
 	startGame: function () {
-
+		console.log(Game.testSak)
 		$('#loadCanvas').hide();
 		$('#animal-matrix').show();	
 		
 		$('.animalSound').on('click', 'td',function(e) {
 			var animal = $(this).attr('id')
 			var animalSound = Game.contentManager.assets[animal].src;
+			createjs.Sound.play(animalSound);
+
+			//litt daarlig animasjon...
+			$(this).find('img').toggleClass("clicked");
+			$(this).parent().siblings().find('img').toggleClass('hidden')
+			$(this).siblings().toggleClass('hidden')
             // var sound = new Sound(animal);
-            createjs.Sound.play(animalSound);
-        });	
+            
+        });
+
+
+
+
 
 	}
-
-
 
 
 };
