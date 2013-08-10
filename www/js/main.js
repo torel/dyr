@@ -42,7 +42,7 @@ Game = {
 			//litt daarlig animasjon...
 			$(this).find('img').toggleClass("clicked");
 			$(this).parent().siblings().find('img').toggleClass('hidden')
-			$(this).siblings().toggleClass('hidden')
+			$(this).siblings().find('img').toggleClass('hidden')
             // var sound = new Sound(animal);
             
         });
