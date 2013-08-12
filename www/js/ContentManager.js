@@ -31,7 +31,7 @@
 		width = stage.canvas.width;
 		height = stage.canvas.height;
 		
-		preload = new createjs.LoadQueue(false);
+		preload = new createjs.LoadQueue(true);
 		preload.installPlugin(createjs.SoundJS);
 		
 		preload.onError =  handleElementError;
@@ -44,7 +44,7 @@
 	    that = this;
 
 		
-	}
+	};
 
 	//Private functions
 	function handleElementLoad(event) {

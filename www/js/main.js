@@ -17,14 +17,14 @@ Game = {
 
 	init: function() {
 		app.initialize();
-		var canv = document.getElementById("loadCanvas");
-		var stage = new createjs.Stage(canv);
+		// var canv = document.getElementById("loadCanvas");
+		// var stage = new createjs.Stage(canv);
 
-		Game.contentManager = new ContentManager(stage, this.manifest);
-		Game.contentManager.setDownloadCompleted(this.startGame);
-		Game.contentManager.startDownload();
+		// Game.contentManager = new ContentManager(stage, this.manifest);
+		// Game.contentManager.setDownloadCompleted(this.startGame);
+		// Game.contentManager.startDownload();
 
-        
+		this.startGame();        
             
 
 	},
@@ -36,14 +36,15 @@ Game = {
 		
 		$('.animalSound').on('click', 'td',function(e) {
 			var animal = $(this).attr('id')
-			var animalSound = Game.contentManager.assets[animal].src;
-			createjs.Sound.play(animalSound);
+			// var animalSound = Game.contentManager.assets[animal].src;
+			// createjs.Sound.play(animalSound);
 
 			//litt daarlig animasjon...
 			$(this).find('img').toggleClass("clicked");
 			$(this).parent().siblings().find('img').toggleClass('hidden')
 			$(this).siblings().find('img').toggleClass('hidden')
-            // var sound = new Sound(animal);
+            var sound = new Sound(animal);
+            sound.play()
             
         });
 
