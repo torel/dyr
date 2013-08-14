@@ -1,13 +1,13 @@
-#loadCanvas {
+/*#loadCanvas {
 	border: black 1px solid;
 	position: absolute;
 	width: 1000px;
 	height: 640px;
-}
+}*/
 
 #animal-matrix {
 	position: absolute;
-	width: 900px;
+	width: 1000px;
 	height: 640px;
 
 }
@@ -15,8 +15,8 @@
 img {
 	width: 300px;
 	height: 200px;
-	transition:width 1s, height 1s, display:1s;
-	-webkit-transition:width 1s, height 1s;
+	transition:width 0.3s, height 0.3s;
+	-webkit-transition:width 0.3s, height 0.3s;
 }
 
 .clicked {

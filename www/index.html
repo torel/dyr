@@ -41,7 +41,9 @@
             <table class="animalSound">
                 <tr>
                     <td id="and">
-                        <img src="img/and.jpg">          
+                    <audio id="andeAudio" src="sound/and.wav"></audio> 
+                        <img src="img/and.jpg"> 
+                            
                     </td>
                     <td id="geit">
                         <img src="img/geit.jpg">
@@ -52,7 +54,9 @@
                 </tr>
                 <tr>
                     <td id="hest">
+                        <audio id="horseAudio" src="sound/hest.ogg"> </audio>
                         <img src="img/hest.jpg">
+                       
                     </td>
                     <td id="hund">
                         <img src="img/hund.jpg">
@@ -74,10 +78,15 @@
                 </tr>
             </table>
         </div>
+        <audio controls>
+          <source src="sound/horse.ogg" type="audio/ogg">
+          <source src="sound/ande.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
 
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/lib/zepto.min.js"></script>
-        <script type="text/javascript" src="js/lib/cordova.js"></script>
+        <!-- // <script type="text/javascript" src="js/lib/cordova.js"></script> -->
         <script type="text/javascript" src="http://code.createjs.com/createjs-2013.05.14.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/sound.js"></script>

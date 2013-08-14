@@ -30,12 +30,13 @@ Game = {
 	},
 
 	startGame: function () {
-		console.log(Game.testSak)
+		// console.log(Game.testSak)
 		$('#loadCanvas').hide();
 		$('#animal-matrix').show();	
 		
 		$('.animalSound').on('click', 'td',function(e) {
 			var animal = $(this).attr('id')
+			var audio = $(this).find('audio')[0];
 			// var animalSound = Game.contentManager.assets[animal].src;
 			// createjs.Sound.play(animalSound);
 
@@ -43,15 +44,15 @@ Game = {
 			$(this).find('img').toggleClass("clicked");
 			$(this).parent().siblings().find('img').toggleClass('hidden')
 			$(this).siblings().find('img').toggleClass('hidden')
-            var sound = new Sound(animal);
-            sound.play()
+            // var sound = new Media("sound/" + animal + ".wav",
+            // 	function() {alert("Media loaded with great success")}, function() {alert("Media, Fucked up..")})
+            // var sound = new Sound(animal)
+            
+            audio.play();
+
+            // sound.play()
             
         });
-
-
-
-
-
 	}
 
 
