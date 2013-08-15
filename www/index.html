@@ -1,22 +1,5 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -24,87 +7,42 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-dark.min.css" />
+
+        <script data-main="js/index" src="js/lib/require.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+
         <title>Dyrelyder</title>
     </head>
-    <body onload="Game.init()">
-        <canvas id ="loadCanvas"></canvas>
-        
+    <body class="dark">
         <div class="app">
-            <h1>PhoneGap</h1>
+            <h1>Pekeboken min</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
 
-        <div id="animal-matrix" style="display: none;">
-            <table class="animalSound">
-                <tr>
-                    <td id="and">
-                    <audio id="andeAudio" src="sound/and.wav"></audio> 
-                        <img src="img/and.jpg"> 
-                            
-                    </td>
-                    <td id="geit">
-                        <img src="img/geit.jpg">
-                    </td>
-                    <td  id="gris">
-                        <img src="img/gris.jpg">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="hest">
-                        <audio id="horseAudio" src="sound/hest.ogg"> </audio>
-                        <img src="img/hest.jpg">
-                       
-                    </td>
-                    <td id="hund">
-                        <img src="img/hund.jpg">
-                    </td>
-                    <td id="katt">
-                        <img src="img/katt.jpg">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="ku">
-                        <img src="img/ku.jpg">
-                    </td>
-                    <td id="sau">
-                        <img src="img/sau.jpg">
-                    </td>
-                    <td id="ugle">
-                        <img src="img/ugle.jpg">
-                    </td>
-                </tr>
-            </table>
+        <div>
+            <script id="template" type="text/x-handlebars-template">
+                <table id="image-matrix">
+                    <tr>
+                        <td id="{{resources.[0].name}}"><img src="{{resources.[0].img}}"></td>
+                        <td id="{{resources.[1].name}}"><img src="{{resources.[1].img}}"></td>
+                        <td id="{{resources.[2].name}}"><img src="{{resources.[2].img}}"></td>
+                    </tr>
+                    <tr>
+                        <td id="{{resources.[3].name}}"><img src="{{resources.[3].img}}"></td>
+                        <td id="{{resources.[4].name}}"><img src="{{resources.[4].img}}"></td>
+                        <td id="{{resources.[5].name}}"><img src="{{resources.[5].img}}"></td>
+                    </tr>
+                    <tr>
+                        <td id="{{resources.[6].name}}"><img src="{{resources.[6].img}}"></td>
+                        <td id="{{resources.[7].name}}"><img src="{{resources.[7].img}}"></td>
+                        <td id="{{resources.[8].name}}"><img src="{{resources.[8].img}}"></td>
+                    </tr>
+                </table>
+            </script>
         </div>
-        <audio controls>
-          <source src="sound/horse.ogg" type="audio/ogg">
-          <source src="sound/ande.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/lib/zepto.min.js"></script>
-        <!-- // <script type="text/javascript" src="js/lib/cordova.js"></script> -->
-        <script type="text/javascript" src="http://code.createjs.com/createjs-2013.05.14.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/sound.js"></script>
-        <script type="text/javascript" src="js/ContentManager.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-
-        <script type="text/javascript">
-               
-
-          /*  app.initialize();
-
-
-            $('#and').on('click', function(e) {
-                var sound = new Sound('and');
-                sound.play();   
-            });*/
-            
-            
-        </script>
     </body>
 </html>
