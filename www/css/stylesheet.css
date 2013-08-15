@@ -1,14 +1,6 @@
-#loadCanvas {
-	border: black 1px solid;
-	position: absolute;
-	width: 1000px;
-	height: 640px;
-}
-
 #animal-matrix {
 	position: absolute;
-	width: 900px;
-	height: 640px;
+	width: 100%;
 
 }
 

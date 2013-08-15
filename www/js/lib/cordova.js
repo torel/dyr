@@ -8,9 +8,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License.  You may obtain a copy of the License at
- 
+
      http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -6839,7 +6839,7 @@ require('cordova/channel').onNativeReady.fire();
             for (var i = 0; i < modules.length; i++) {
                 var module = modules[i];
                 if (module) {
-                    try { 
+                    try {
                         if (module.clobbers && module.clobbers.length) {
                             for (var j = 0; j < module.clobbers.length; j++) {
                                 mapper.clobbers(module.id, module.clobbers[j]);
@@ -6909,7 +6909,7 @@ require('cordova/channel').onNativeReady.fire();
         } catch(err){
             finishPluginLoading();
         }
-    } 
+    }
 
 
     // Try to XHR the cordova_plugins.json file asynchronously.
@@ -6930,7 +6930,7 @@ require('cordova/channel').onNativeReady.fire();
         }
     };
     xhr.onerror = function() {
-        // In this case, the json file was not present, but XHR was allowed, 
+        // In this case, the json file was not present, but XHR was allowed,
         // so we should still try the script injection technique with the js file
         // in case that is there.
         injectPluginScript();
