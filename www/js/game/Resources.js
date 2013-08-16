@@ -3,15 +3,15 @@ define(['cordova'], function(cordova) {
 
 	function Resources () {
 		this.resources = [
-			{ type: 'animal', name: 'and', img: 'img/and.jpg', sound: this.loadSound('sound/and.wav') },
-			{ type: 'animal', name: 'geit', img: 'img/geit.jpg', sound: this.loadSound('sound/geit.wav') },
-			{ type: 'animal', name: 'gris', img: 'img/gris.jpg', sound: this.loadSound('sound/gris.wav') },
-			{ type: 'animal', name: 'hest', img: 'img/hest.jpg', sound: this.loadSound('sound/hest.wav') },
-			{ type: 'animal', name: 'hund', img: 'img/hund.jpg', sound: this.loadSound('sound/hund.wav') },
-			{ type: 'animal', name: 'katt', img: 'img/katt.jpg', sound: this.loadSound('sound/katt.wav') },
-			{ type: 'animal', name: 'ku', img: 'img/ku.jpg', sound: this.loadSound('sound/ku.wav') },
-			{ type: 'animal', name: 'sau', img: 'img/sau.jpg', sound: this.loadSound('sound/sau.wav') },
-			{ type: 'animal', name: 'ugle', img: 'img/ugle.jpg', sound: this.loadSound('sound/ugle.wav') }
+			{ type: 'animal', name: 'and', img: 'img/and.png', sound: this.loadSound('sound/and.wav') },
+			{ type: 'animal', name: 'geit', img: 'img/geit.png', sound: this.loadSound('sound/geit.wav') },
+			{ type: 'animal', name: 'gris', img: 'img/gris.png', sound: this.loadSound('sound/gris.wav') },
+			{ type: 'animal', name: 'hest', img: 'img/hest.png', sound: this.loadSound('sound/hest.wav') },
+			{ type: 'animal', name: 'hund', img: 'img/hund.png', sound: this.loadSound('sound/hund.wav') },
+			{ type: 'animal', name: 'katt', img: 'img/katt.png', sound: this.loadSound('sound/katt.wav') },
+			{ type: 'animal', name: 'ku', img: 'img/ku.png', sound: this.loadSound('sound/ku.wav') },
+			{ type: 'animal', name: 'sau', img: 'img/sau.png', sound: this.loadSound('sound/sau.wav') },
+			{ type: 'animal', name: 'ugle', img: 'img/ugle.png', sound: this.loadSound('sound/ugle.wav') }
 		];
 	}
 
