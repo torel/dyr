@@ -1,40 +1,30 @@
 
-define(['cordova', 'jquery', 'app/ViewManager', 'app/Resources'], function(Cordova, $, ViewManager, Resources) {
+define(['cordova', 'jquery', 'game/ViewManager'], function(Cordova, $, ViewManager) {
 
-	function App(viewManager, resources) {
-		this.viewManager = new ViewManager();
-		this.resources = new Resources();
-        
-		this.bindEvents();
-	}	
+    var app = {
 
-	App.prototype = {
-
-        resources: null,
-        viewManager: null,
-
-		constructor: App,
-
+        // Application Constructor
+        initialize: function() {
+            this.bindEvents();
+        },
         // Bind Event Listeners
         //
         // Bind any events that are required on startup. Common events are:
         // 'load', 'deviceready', 'offline', and 'online'.
         bindEvents: function() {
-
             if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
                 document.addEventListener('deviceready', this.onDeviceReady, false);
             }
             else {
                 this.onDeviceReady();
             }
-
         },
         // deviceready Event Handler
         //
         // The scope of 'this' is the event. In order to call the 'receivedEvent'
         // function, we must explicity call 'app.receivedEvent(...);'
         onDeviceReady: function() {
-            this.receivedEvent('deviceready');
+            app.receivedEvent('deviceready');
         },
         // Update DOM on a Received Event
         receivedEvent: function(id) {
@@ -49,9 +39,10 @@ define(['cordova', 'jquery', 'app/ViewManager', 'app/Resources'], function(Cordo
 
             $(parentElement).parent().remove();
 
-            this.viewManager.renderView('animal', this.resources);
+            var viewManager = new ViewManager();
+            viewManager.renderView('animal');
         }
     };
 
-    return App;
+    return app;
 });

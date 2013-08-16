@@ -21,6 +21,7 @@ define(['cordova'], function(cordova) {
 
 		loadSound: function(url) {
             var Media = cordova.require('cordova/plugin/Media');
+            url = 'file:///android_asset/www/' + url;
 			return new Media(url, function(){console.log('Sound ' + url + ' loaded successfully')}, function() {console.log('Failed to load sound ' + url)});
 		},
 
