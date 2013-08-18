@@ -1,5 +1,5 @@
 
-define(['jquery', 'handlebars', 'game/Resources'], function($, Handlebars, Resources) {
+define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $m, Handlebars, Resources) {
 
     function ViewManager() {
         this.resources = new Resources();
@@ -29,10 +29,12 @@ define(['jquery', 'handlebars', 'game/Resources'], function($, Handlebars, Resou
 
         setupOnImageClick: function() {
             var that = this;
-            $('#image-matrix td').on('click', function() {
+            $('#image-matrix td').on('vclick', function() {
                 var id = $(this).attr('id');
                 var resource = that.resources.findByName(id);
                 resource.sound.play();
+
+                console.log('Image clicked: ' + resource.name);
             });
         },
 

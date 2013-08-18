@@ -12,12 +12,14 @@ define(['cordova', 'jquery', 'game/ViewManager'], function(Cordova, $, ViewManag
         // Bind any events that are required on startup. Common events are:
         // 'load', 'deviceready', 'offline', and 'online'.
         bindEvents: function() {
+            this.onDeviceReady();
+            /*
             if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
                 document.addEventListener('deviceready', this.onDeviceReady, false);
             }
             else {
                 this.onDeviceReady();
-            }
+            } */
         },
         // deviceready Event Handler
         //

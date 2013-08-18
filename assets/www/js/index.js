@@ -6,7 +6,8 @@ require.config({
     paths: {
         cordova: 'lib/cordova',
         handlebars: 'lib/handlebars',
-        jquery: 'lib/jquery'
+        jquery: 'lib/jquery',
+        jquerymobile: 'lib/jquery.mobile'
     },
 
     // Configure non-AMD modules
