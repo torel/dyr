@@ -16,7 +16,6 @@ define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $
 
             var context = { resources: this.resources.findResourcesByType(resourceType)};
             var html = template(context);
-
             templateElement.parent().html(html);
 
             this.setupView();
@@ -32,7 +31,9 @@ define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $
             $('#image-matrix td').on('vclick', function() {
                 var id = $(this).attr('id');
                 var resource = that.resources.findByName(id);
+                var test = resource.sound
                 resource.sound.play();
+                console.log(test)
 
                 console.log('Image clicked: ' + resource.name);
             });
