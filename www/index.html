@@ -27,19 +27,82 @@
             <script id="template" type="text/x-handlebars-template">
                 <table id="image-matrix">
                     <tr>
-                        <td id="{{resources.[0].name}}"><img class="photo" src="{{resources.[0].img}}"></td>
-                        <td id="{{resources.[1].name}}"><img class="photo" src="{{resources.[1].img}}"></td>
-                        <td id="{{resources.[2].name}}"><img class="photo" src="{{resources.[2].img}}"></td>
+                        <td id="{{resources.[0].name}}">
+                            <img class="photo" src="{{resources.[0].img}}">
+                            <audio id="{{resources.[0].name}}-audio">
+                                <source src="{{resources.[0].sound.wav}}">
+                                <source src="{{resources.[0].sound.ogg}}">
+                                <source src="{{resources.[0].sound.mp3}}">
+                            </audio>
+                        </td>
+                        <td id="{{resources.[1].name}}">
+                            <img class="photo" src="{{resources.[1].img}}">
+                            <audio id="{{resources.[1].name}}-audio">
+                                <source src="{{resources.[1].sound.wav}}">
+                                <source src="{{resources.[1].sound.ogg}}">
+                                <source src="{{resources.[1].sound.mp3}}">
+                            </audio>
+                        </td>
+                        <td id="{{resources.[2].name}}">
+                            <img class="photo" src="{{resources.[2].img}}">
+                            <audio id="{{resources.[2].name}}-audio">
+                                <source src="{{resources.[2].sound.wav}}">
+                                <source src="{{resources.[2].sound.ogg}}">
+                                <source src="{{resources.[2].sound.mp3}}">
+                            </audio>
+                        </td>
                     </tr>
                     <tr>
-                        <td id="{{resources.[3].name}}"><img class="photo" src="{{resources.[3].img}}"></td>
-                        <td id="{{resources.[4].name}}"><img class="photo" src="{{resources.[4].img}}"></td>
-                        <td id="{{resources.[5].name}}"><img class="photo" src="{{resources.[5].img}}"></td>
+                        <td id="{{resources.[3].name}}">
+                            <img class="photo" src="{{resources.[3].img}}">
+                            <audio id="{{resources.[3].name}}-audio">
+                                <source src="{{resources.[3].sound.wav}}">
+                                <source src="{{resources.[3].sound.ogg}}">
+                                <source src="{{resources.[3].sound.mp3}}">
+                            </audio>
+                        </td>
+                        <td id="{{resources.[4].name}}">
+                            <img class="photo" src="{{resources.[4].img}}">
+                            <audio id="{{resources.[4].name}}-audio">
+                                <source src="{{resources.[4].sound.wav}}">
+                                <source src="{{resources.[4].sound.ogg}}">
+                                <source src="{{resources.[4].sound.mp3}}">
+                            </audio>
+                        </td>
+                        <td id="{{resources.[5].name}}">
+                            <img class="photo" src="{{resources.[5].img}}">
+                            <audio id="{{resources.[5].name}}-audio">
+                                <source src="{{resources.[5].sound.wav}}">
+                                <source src="{{resources.[5].sound.ogg}}">
+                                <source src="{{resources.[5].sound.mp3}}">
+                            </audio>
+                        </td>
                     </tr>
                     <tr>
-                        <td id="{{resources.[6].name}}"><img class="photo" src="{{resources.[6].img}}"></td>
-                        <td id="{{resources.[7].name}}"><img class="photo" src="{{resources.[7].img}}"></td>
-                        <td id="{{resources.[8].name}}"><img class="photo" src="{{resources.[8].img}}"></td>
+                        <td id="{{resources.[6].name}}">
+                            <img class="photo" src="{{resources.[6].img}}">
+                            <audio id="{{resources.[6].name}}-audio">
+                                <source src="{{resources.[6].sound.wav}}">
+                                <source src="{{resources.[6].sound.ogg}}">
+                                <source src="{{resources.[6].sound.mp3}}">
+                            </audio>
+                        </td>
+                        <td id="{{resources.[7].name}}">
+                            <img class="photo" src="{{resources.[7].img}}">
+                            <audio id="{{resources.[7].name}}-audio">
+                                <source src="{{resources.[7].sound.wav}}">
+                                <source src="{{resources.[7].sound.ogg}}">
+                                <source src="{{resources.[7].sound.mp3}}">
+                            </audio>
+                        </td>
+                        <td id="{{resources.[8].name}}">
+                            <img class="photo" src="{{resources.[8].img}}">
+                            <audio id="{{resources.[8].name}}-audio">
+                                <source src="{{resources.[8].sound.wav}}">
+                                <source src="{{resources.[8].sound.ogg}}">
+                                <source src="{{resources.[8].sound.mp3}}">
+                            </audio>
+                        </td>
                     </tr>
                 </table>
             </script>

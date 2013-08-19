@@ -16,6 +16,7 @@ define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $
 
             var context = { resources: this.resources.findResourcesByType(resourceType)};
             var html = template(context);
+
             templateElement.parent().html(html);
 
             this.setupView();
@@ -28,15 +29,42 @@ define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $
 
         setupOnImageClick: function() {
             var that = this;
-            $('#image-matrix td').on('vclick', function() {
+            $('#image-matrix td').on('click', function() {
                 var id = $(this).attr('id');
                 var resource = that.resources.findByName(id);
-                var test = resource.sound
-                resource.sound.play();
-                console.log(test)
 
+                that.playSound(resource);
                 console.log('Image clicked: ' + resource.name);
             });
+        },
+
+        playSound: function(resource) {
+            if (navigator.userAgent.match(/Android/i)) {
+                this.playPhoneGapMediaSound(resource);
+            }
+            else if (navigator.userAgent.match(/Chrome|Mozilla|AppleWebKit|Safari/i)) {
+                this.playHtmlSound(resource);
+            }
+        },
+
+        playHtmlSound: function(resource) {
+            var audio = document.getElementById(resource.name + '-audio');
+            audio.play();
+        },
+
+        playPhoneGapMediaSound: function(resource) {
+
+            var Media = cordova.require('cordova/plugin/Media');
+            var media = new Media(
+                resource.sound.mp3,
+                function(){
+                    console.log('Sound ' + resource.name + ' loaded successfully')
+                },
+                function() {
+                    console.log('Failed to load sound ' + resource.name)
+                }
+            );
+            media.play();
         },
 
         /**

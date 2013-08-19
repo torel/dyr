@@ -27,7 +27,13 @@
             <script id="template" type="text/x-handlebars-template">
                 <table id="image-matrix">
                     <tr>
-                        <td id="{{resources.[0].name}}"><img class="photo" src="{{resources.[0].img}}"></td>
+                        <td id="{{resources.[0].name}}">
+                            <img class="photo" src="{{resources.[0].img}}">
+                            <audio id="{{resources.[0].name}}-audio">
+                                <source src="{{resources.[0].sound.wav}}">
+                                <source src="{{resources.[0].sound.ogg}}">
+                            </audio>
+                        </td>
                         <td id="{{resources.[1].name}}"><img class="photo" src="{{resources.[1].img}}"></td>
                         <td id="{{resources.[2].name}}"><img class="photo" src="{{resources.[2].img}}"></td>
                     </tr>
