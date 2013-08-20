@@ -7,7 +7,8 @@ require.config({
         cordova: 'lib/cordova',
         handlebars: 'lib/handlebars',
         jquery: 'lib/jquery',
-        jquerymobile: 'lib/jquery.mobile'
+        jquerymobile: 'lib/jquery.mobile',
+        tween: 'lib/tweenjs-0.4.1.min'
     },
 
     // Configure non-AMD modules
@@ -22,7 +23,7 @@ require.config({
     }
 });
 
-require(['game/app', 'cordova', 'handlebars', 'game/Resources', 'game/ViewManager'], function(app, cordova, Handlebars, resources, viewManager) {
+require(['game/app', 'cordova', 'handlebars', 'game/Resources', 'game/ViewManager', 'tween'], function(app, cordova, Handlebars, resources, viewManager, tween) {
 
     app.initialize();
 });

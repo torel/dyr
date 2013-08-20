@@ -1,5 +1,5 @@
 
-define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $m, Handlebars, Resources) {
+define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources', 'game/Animation'], function($, $m, Handlebars, Resources, Animation) {
 
     function ViewManager() {
         this.resources = new Resources();
@@ -35,6 +35,9 @@ define(['jquery', 'jquerymobile', 'handlebars', 'game/Resources'], function($, $
 
                 that.playSound(resource);
                 console.log('Image clicked: ' + resource.name);
+                // console.log($(this).find('img'))
+                var animation = new Animation();
+                animation.test($(this).find('img'));
             });
         },
 
