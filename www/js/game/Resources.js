@@ -3,7 +3,7 @@ define(['cordova', 'game/Util'], function(cordova, Util) {
 
 	function Resources () {
 		this.resources = [
-			{ type: 'animal', name: 'and', img: 'img/and.png', sound: this.loadSound('and')},
+			{ type: 'animal', name: 'and', img: 'img/and.png', sound: this.loadSound('and') },
 			{ type: 'animal', name: 'geit', img: 'img/geit.png', sound: this.loadSound('geit') },
 			{ type: 'animal', name: 'gris', img: 'img/gris.png', sound: this.loadSound('gris') },
 			{ type: 'animal', name: 'hest', img: 'img/hest.png', sound: this.loadSound('hest') },
